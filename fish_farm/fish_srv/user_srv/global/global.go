@@ -1,24 +1,24 @@
-package main
+package global
 
 import (
-	"fmt"
-	"github.com/anaskhan96/go-password-encoder"
+	"go_project/fish_farm/user_srv/model"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
-
-	"crypto/md5"
 	"log"
 	"os"
 	"time"
-
-	"go_project/fish_farm/user_srv/model"
 )
 
-func main() {
+//将DB作为全局变量
+var (
+	DB *gorm.DB
+)
+
+func init()  {
 	// refer https://github.com/go-sql-driver/mysql#dsn-data-source-name for details
-	dsn := "root:123456@tcp(192.168.0.100:3306)/fish_user_srv?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "root:123456@tcp(192.168.0.108:3306)/fish_user_srv?charset=utf8mb4&parseTime=True&loc=Local"
 	//配置日志输出，以便在执行gorm时可以查看底层的sql执行过程
 	newLogger := logger.New(
 		log.New(os.Stdout, "\r\n", log.LstdFlags), //io writer输出到控制台
@@ -29,7 +29,8 @@ func main() {
 		},
 	)
 	//全局模式
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
+	var err error
+	DB,err = gorm.Open(mysql.Open(dsn), &gorm.Config{
 		//修改命名策略，使其直接用数据库模型名来建表
 		NamingStrategy: schema.NamingStrategy{
 			SingularTable: true,
@@ -40,15 +41,5 @@ func main() {
 		panic(err)
 	}
 	//设置全局的logger，在每次执行gorm时都会将底层的sql语句输出出来
-	_ = db.AutoMigrate(&model.User{})
-
-	salt, encodedPwd := password.Encode("generic password", nil)
-	check := password.Verify("generic password", salt, encodedPwd, nil)
-	fmt.Println(check) // true
-
-	// Using custom options
-	options := &password.Options{10, 10000, 50, md5.New}
-	salt, encodedPwd = password.Encode("generic password", options)
-	check = password.Verify("generic password", salt, encodedPwd, options)
-	fmt.Println(check) // true
+	_ = DB.AutoMigrate(&model.User{})
 }
