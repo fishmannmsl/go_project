@@ -7,14 +7,14 @@ user_srv:
   name: 'user_srv'
 
 jwt:
-  key: 'v!YhrZjQmHmqRsk$k#6&aK4zcGz^wwdZ'
+  key: ''
 
 sms:
-  key: 'LTAI5t8MbaSmhXqVMyPmVDnT'
-  secret: 'UugwgeGAXPeBlYYRNobOF05nf5TevZ'
-  sign_name: '阿里云短信测试'
-  template_code: 'SMS_154950909'
-  phone_numbers: '18070155633'
+  key: ''
+  secret: ''
+  sign_name: ''
+  template_code: ''
+  phone_numbers: ''
 
 redis:
   host: '192.168.0.107'
