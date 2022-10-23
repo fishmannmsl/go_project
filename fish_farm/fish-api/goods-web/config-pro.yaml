@@ -1,0 +1,26 @@
+name: 'goods-web'
+port: 8021
+
+user_srv:
+  host: '192.1680.100'
+  port: 50051
+  name: 'user_srv'
+
+jwt:
+  key: ''
+
+sms:
+  key: ''
+  secret: ''
+  sign_name: ''
+  template_code: ''
+  phone_numbers: ''
+
+redis:
+  host: '192.168.0.107'
+  port: 6379
+  expire: 5
+
+consul:
+  host: '192.168.0.107'
+  port: 8500

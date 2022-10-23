@@ -3,25 +3,25 @@ package main
 import (
 	"flag"
 	"fmt"
-	"net"
-	"os"
-	"os/signal"
-	"syscall"
-	"time"
-
 	"github.com/hashicorp/consul/api"
-	uuid "github.com/satori/go.uuid"
 	"go.uber.org/zap"
+	"go_project/fish_farm/fish_srv/goods_srv/global"
+	"go_project/fish_farm/fish_srv/goods_srv/handler"
+	"go_project/fish_farm/fish_srv/goods_srv/initialize"
+	"go_project/fish_farm/fish_srv/goods_srv/proto"
+	"go_project/fish_farm/fish_srv/goods_srv/utils"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/health"
 	"google.golang.org/grpc/health/grpc_health_v1"
 	"google.golang.org/grpc/keepalive"
 
-	"go_project/fish_farm/fish_srv/user_srv/global"
-	"go_project/fish_farm/fish_srv/user_srv/handler"
-	"go_project/fish_farm/fish_srv/user_srv/initialize"
-	"go_project/fish_farm/fish_srv/user_srv/proto"
-	"go_project/fish_farm/fish_srv/user_srv/utils"
+	uuid "github.com/satori/go.uuid"
+
+	"net"
+	"os"
+	"os/signal"
+	"syscall"
+	"time"
 )
 
 func main() {
@@ -46,7 +46,7 @@ func main() {
 		grpc.KeepaliveParams(keepalive.ServerParameters{ //这个连接最大的空闲时间，超过就释放，解决proxy等到网络问题（不通知grpc的client和server）
 			MaxConnectionIdle: 5 * time.Minute}),
 	)
-	proto.RegisterUserServer(server, &handler.UserServer{})
+	proto.RegisterGoodsServer(server, &handler.GoodsServer{})
 	//启动grpc
 	lis, err := net.Listen("tcp", fmt.Sprintf("%s:%d", *IP, *Port))
 	if err != nil {
@@ -63,7 +63,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	//生成对应的检查对象:IP地址为当前主机IP
+	//生成对应的检查对象
 	check := &api.AgentServiceCheck{
 		GRPC:                           fmt.Sprintf("%s:%d", global.ServerConfig.Host, *Port),
 		Timeout:                        "5s",
@@ -77,7 +77,7 @@ func main() {
 		Name:    global.ServerConfig.Name,
 		ID:      serviceID,
 		Port:    *Port,
-		Tags:    []string{"srv", "user"},
+		Tags:    global.ServerConfig.Tags,
 		Address: global.ServerConfig.Host,
 		Check:   check,
 	}

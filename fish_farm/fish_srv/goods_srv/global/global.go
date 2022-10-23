@@ -1,7 +1,7 @@
 package global
 
 import (
-	"go_project/fish_farm/fish_srv/user_srv/config"
+	"go_project/fish_farm/fish_srv/goods_srv/config"
 	"gorm.io/gorm"
 )
 
