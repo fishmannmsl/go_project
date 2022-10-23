@@ -16,7 +16,7 @@ import (
 
 /*
 用以生成模拟用户数据，用来做测试
- */
+*/
 func main() {
 	// refer https://github.com/go-sql-driver/mysql#dsn-data-source-name for details
 	dsn := "root:123456@tcp(192.168.0.108:3306)/fish_user_srv?charset=utf8mb4&parseTime=True&loc=Local"
@@ -41,15 +41,15 @@ func main() {
 		panic(err)
 	}
 
-	options := &password.Options{16, 100, 32, sha512.New}//md5.New可改为sha512.New()
+	options := &password.Options{16, 100, 32, sha512.New} //md5.New可改为sha512.New()
 	salt, encodedPwd := password.Encode("admin123", options)
-	newPasswd := fmt.Sprintf("$pbkdf2-sha512$%s$%s",salt,encodedPwd)
+	newPasswd := fmt.Sprintf("$pbkdf2-sha512$%s$%s", salt, encodedPwd)
 	fmt.Println(newPasswd)
 
-	for i:=0;i<10; i++ {
+	for i := 0; i < 10; i++ {
 		user := model.User{
-			NickName: fmt.Sprintf("dsxg%d",i),
-			Mobile: fmt.Sprintf("1376162457%d",i),
+			NickName: fmt.Sprintf("dsxg%d", i),
+			Mobile:   fmt.Sprintf("1376162457%d", i),
 			Password: newPasswd,
 		}
 		db.Save(&user)

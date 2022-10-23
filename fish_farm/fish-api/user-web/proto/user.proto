@@ -30,8 +30,8 @@ message MobileRequest {
 }
 
 message PageInfo{
-    uint32 Pn = 1;//页码
-    uint32 PSzie = 2;//每页展示的数据
+    uint32 Pn = 1;
+    uint32 PSzie = 2;
 }
 
 message PasswordCheckInfo {
