@@ -1,0 +1,488 @@
+2022-11-27T14:22:08.988+0800	DEBUG	rpc/rpc_client.go:286	config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 register server push request:ConfigChangeNotifyRequest handler:ConfigChangeNotifyRequestHandler
+2022-11-27T14:22:08.990+0800	DEBUG	rpc/rpc_client.go:286	config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 register server push request:ConnectResetRequest handler:ConnectResetRequestHandler
+2022-11-27T14:22:08.990+0800	DEBUG	rpc/rpc_client.go:286	config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 register server push request:ClientDetectionRequest handler:ClientDetectionRequestHandler
+2022-11-27T14:22:08.990+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 try to connect to server on start up, server: {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}
+2022-11-27T14:22:09.022+0800	INFO	util/common.go:96	Local IP:192.168.0.102
+2022-11-27T14:22:11.005+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 fail to connect to server on start up, error message=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=2
+2022-11-27T14:22:11.005+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 try to connect to server on start up, server: {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}
+2022-11-27T14:22:13.017+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 fail to connect to server on start up, error message=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=1
+2022-11-27T14:22:13.017+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 try to connect to server on start up, server: {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}
+2022-11-27T14:22:15.028+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 fail to connect to server on start up, error message=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=0
+2022-11-27T14:22:15.028+0800	INFO	rpc/rpc_client.go:318	config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 try to re connect to a new server, server is not appointed, will choose a random server.
+2022-11-27T14:22:15.029+0800	ERROR	rpc/rpc_client.go:517	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"dev","dataId":"user-srv.json","tenant":"a3686489-64eb-4d04-87a3-b550520f6db6","module":"config","tag":""}, retryTimes=0, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/user_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/user_srv/initialize/config.go:74
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/user_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371
+2022-11-27T14:22:15.131+0800	ERROR	rpc/rpc_client.go:517	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"dev","dataId":"user-srv.json","tenant":"a3686489-64eb-4d04-87a3-b550520f6db6","module":"config","tag":""}, retryTimes=1, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/user_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/user_srv/initialize/config.go:74
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/user_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371
+2022-11-27T14:22:15.232+0800	ERROR	rpc/rpc_client.go:517	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"dev","dataId":"user-srv.json","tenant":"a3686489-64eb-4d04-87a3-b550520f6db6","module":"config","tag":""}, retryTimes=2, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/user_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/user_srv/initialize/config.go:74
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/user_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371
+2022-11-27T14:22:15.335+0800	INFO	config_client/config_client.go:202	get config from server error:client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/user_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/user_srv/initialize/config.go:74
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/user_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371 
+2022-11-27T14:22:19.050+0800	WARN	rpc/rpc_client.go:349	config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 fail to connect server, after trying 1 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T14:22:21.165+0800	WARN	rpc/rpc_client.go:349	config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 fail to connect server, after trying 2 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T14:22:23.379+0800	WARN	rpc/rpc_client.go:349	config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 fail to connect server, after trying 3 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T14:22:25.692+0800	WARN	rpc/rpc_client.go:349	config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 fail to connect server, after trying 4 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T14:22:28.102+0800	WARN	rpc/rpc_client.go:349	config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 fail to connect server, after trying 5 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T14:22:30.611+0800	WARN	rpc/rpc_client.go:349	config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 fail to connect server, after trying 6 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T14:22:33.221+0800	WARN	rpc/rpc_client.go:349	config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 fail to connect server, after trying 7 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T14:22:35.934+0800	WARN	rpc/rpc_client.go:349	config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 fail to connect server, after trying 8 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T14:22:38.749+0800	WARN	rpc/rpc_client.go:349	config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 fail to connect server, after trying 9 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T14:22:41.655+0800	WARN	rpc/rpc_client.go:349	config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 fail to connect server, after trying 10 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T14:22:44.666+0800	WARN	rpc/rpc_client.go:349	config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 fail to connect server, after trying 11 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T14:22:47.777+0800	WARN	rpc/rpc_client.go:349	config-0-8156cbcb-e139-4b25-bf0d-c52fc0c2e958 fail to connect server, after trying 12 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T15:57:26.172+0800	DEBUG	rpc/rpc_client.go:286	config-0-74dbb1e4-7c15-4e32-bb23-50c22e385d48 register server push request:ConfigChangeNotifyRequest handler:ConfigChangeNotifyRequestHandler
+2022-11-27T15:57:26.173+0800	DEBUG	rpc/rpc_client.go:286	config-0-74dbb1e4-7c15-4e32-bb23-50c22e385d48 register server push request:ConnectResetRequest handler:ConnectResetRequestHandler
+2022-11-27T15:57:26.173+0800	DEBUG	rpc/rpc_client.go:286	config-0-74dbb1e4-7c15-4e32-bb23-50c22e385d48 register server push request:ClientDetectionRequest handler:ClientDetectionRequestHandler
+2022-11-27T15:57:26.173+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-74dbb1e4-7c15-4e32-bb23-50c22e385d48 try to connect to server on start up, server: {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}
+2022-11-27T15:57:26.206+0800	INFO	util/common.go:96	Local IP:192.168.0.102
+2022-11-27T15:57:28.187+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-74dbb1e4-7c15-4e32-bb23-50c22e385d48 fail to connect to server on start up, error message=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=2
+2022-11-27T15:57:28.187+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-74dbb1e4-7c15-4e32-bb23-50c22e385d48 try to connect to server on start up, server: {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}
+2022-11-27T15:57:30.198+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-74dbb1e4-7c15-4e32-bb23-50c22e385d48 fail to connect to server on start up, error message=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=1
+2022-11-27T15:57:30.198+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-74dbb1e4-7c15-4e32-bb23-50c22e385d48 try to connect to server on start up, server: {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}
+2022-11-27T15:57:32.209+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-74dbb1e4-7c15-4e32-bb23-50c22e385d48 fail to connect to server on start up, error message=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=0
+2022-11-27T15:57:32.209+0800	INFO	rpc/rpc_client.go:318	config-0-74dbb1e4-7c15-4e32-bb23-50c22e385d48 try to re connect to a new server, server is not appointed, will choose a random server.
+2022-11-27T15:57:32.210+0800	ERROR	rpc/rpc_client.go:517	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"dev","dataId":"goods-srv.json","tenant":"6195d0cc-4563-49ba-bf64-ea454db5d2b6","module":"config","tag":""}, retryTimes=0, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371
+2022-11-27T15:57:32.311+0800	ERROR	rpc/rpc_client.go:517	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"dev","dataId":"goods-srv.json","tenant":"6195d0cc-4563-49ba-bf64-ea454db5d2b6","module":"config","tag":""}, retryTimes=1, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371
+2022-11-27T15:57:32.414+0800	ERROR	rpc/rpc_client.go:517	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"dev","dataId":"goods-srv.json","tenant":"6195d0cc-4563-49ba-bf64-ea454db5d2b6","module":"config","tag":""}, retryTimes=2, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371
+2022-11-27T15:57:32.516+0800	INFO	config_client/config_client.go:202	get config from server error:client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371 
+2022-11-27T15:57:32.516+0800	ERROR	config_client/config_client.go:205	get config from cache  error:failed to read config cache file:tmp/config/cache\config\goods-srv.json@@dev@@6195d0cc-4563-49ba-bf64-ea454db5d2b6,err:open tmp/config/cache\config\goods-srv.json@@dev@@6195d0cc-4563-49ba-bf64-ea454db5d2b6: The system cannot find the file specified. 
+github.com/nacos-group/nacos-sdk-go/v2/clients/cache.ReadConfigFromFile
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/cache/disk_cache.go:102
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:203
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371 
+2022-11-27T15:59:01.851+0800	DEBUG	rpc/rpc_client.go:286	config-0-e714c4ea-4ecf-46ba-8849-74b8ffb317c6 register server push request:ConfigChangeNotifyRequest handler:ConfigChangeNotifyRequestHandler
+2022-11-27T15:59:01.851+0800	DEBUG	rpc/rpc_client.go:286	config-0-e714c4ea-4ecf-46ba-8849-74b8ffb317c6 register server push request:ConnectResetRequest handler:ConnectResetRequestHandler
+2022-11-27T15:59:01.851+0800	DEBUG	rpc/rpc_client.go:286	config-0-e714c4ea-4ecf-46ba-8849-74b8ffb317c6 register server push request:ClientDetectionRequest handler:ClientDetectionRequestHandler
+2022-11-27T15:59:01.851+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-e714c4ea-4ecf-46ba-8849-74b8ffb317c6 try to connect to server on start up, server: {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}
+2022-11-27T15:59:01.887+0800	INFO	util/common.go:96	Local IP:192.168.0.102
+2022-11-27T15:59:03.866+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-e714c4ea-4ecf-46ba-8849-74b8ffb317c6 fail to connect to server on start up, error message=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=2
+2022-11-27T15:59:03.866+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-e714c4ea-4ecf-46ba-8849-74b8ffb317c6 try to connect to server on start up, server: {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}
+2022-11-27T15:59:05.878+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-e714c4ea-4ecf-46ba-8849-74b8ffb317c6 fail to connect to server on start up, error message=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=1
+2022-11-27T15:59:05.879+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-e714c4ea-4ecf-46ba-8849-74b8ffb317c6 try to connect to server on start up, server: {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}
+2022-11-27T15:59:07.886+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-e714c4ea-4ecf-46ba-8849-74b8ffb317c6 fail to connect to server on start up, error message=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=0
+2022-11-27T15:59:07.886+0800	INFO	rpc/rpc_client.go:318	config-0-e714c4ea-4ecf-46ba-8849-74b8ffb317c6 try to re connect to a new server, server is not appointed, will choose a random server.
+2022-11-27T15:59:07.886+0800	ERROR	rpc/rpc_client.go:517	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"dev","dataId":"goods-srv.json","tenant":"6195d0cc-4563-49ba-bf64-ea454db5d2b6","module":"config","tag":""}, retryTimes=0, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371
+2022-11-27T15:59:07.988+0800	ERROR	rpc/rpc_client.go:517	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"dev","dataId":"goods-srv.json","tenant":"6195d0cc-4563-49ba-bf64-ea454db5d2b6","module":"config","tag":""}, retryTimes=1, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371
+2022-11-27T15:59:08.090+0800	ERROR	rpc/rpc_client.go:517	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"dev","dataId":"goods-srv.json","tenant":"6195d0cc-4563-49ba-bf64-ea454db5d2b6","module":"config","tag":""}, retryTimes=2, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371
+2022-11-27T15:59:08.193+0800	INFO	config_client/config_client.go:202	get config from server error:client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371 
+2022-11-27T15:59:08.193+0800	ERROR	config_client/config_client.go:205	get config from cache  error:failed to read config cache file:tmp/config/cache\config\goods-srv.json@@dev@@6195d0cc-4563-49ba-bf64-ea454db5d2b6,err:open tmp/config/cache\config\goods-srv.json@@dev@@6195d0cc-4563-49ba-bf64-ea454db5d2b6: The system cannot find the file specified. 
+github.com/nacos-group/nacos-sdk-go/v2/clients/cache.ReadConfigFromFile
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/cache/disk_cache.go:102
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:203
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371 
+2022-11-27T16:03:36.936+0800	DEBUG	rpc/rpc_client.go:286	config-0-c3cdc3f9-a37e-4560-911e-7840e78fbddf register server push request:ConfigChangeNotifyRequest handler:ConfigChangeNotifyRequestHandler
+2022-11-27T16:03:36.936+0800	DEBUG	rpc/rpc_client.go:286	config-0-c3cdc3f9-a37e-4560-911e-7840e78fbddf register server push request:ConnectResetRequest handler:ConnectResetRequestHandler
+2022-11-27T16:03:36.936+0800	DEBUG	rpc/rpc_client.go:286	config-0-c3cdc3f9-a37e-4560-911e-7840e78fbddf register server push request:ClientDetectionRequest handler:ClientDetectionRequestHandler
+2022-11-27T16:03:36.936+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-c3cdc3f9-a37e-4560-911e-7840e78fbddf try to connect to server on start up, server: {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}
+2022-11-27T16:03:36.968+0800	INFO	util/common.go:96	Local IP:192.168.0.102
+2022-11-27T16:03:38.945+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-c3cdc3f9-a37e-4560-911e-7840e78fbddf fail to connect to server on start up, error message=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=2
+2022-11-27T16:03:38.945+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-c3cdc3f9-a37e-4560-911e-7840e78fbddf try to connect to server on start up, server: {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}
+2022-11-27T16:03:40.959+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-c3cdc3f9-a37e-4560-911e-7840e78fbddf fail to connect to server on start up, error message=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=1
+2022-11-27T16:03:40.959+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-c3cdc3f9-a37e-4560-911e-7840e78fbddf try to connect to server on start up, server: {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}
+2022-11-27T16:03:42.974+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-c3cdc3f9-a37e-4560-911e-7840e78fbddf fail to connect to server on start up, error message=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=0
+2022-11-27T16:03:42.974+0800	INFO	rpc/rpc_client.go:318	config-0-c3cdc3f9-a37e-4560-911e-7840e78fbddf try to re connect to a new server, server is not appointed, will choose a random server.
+2022-11-27T16:03:42.975+0800	ERROR	rpc/rpc_client.go:517	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"dev","dataId":"goods-srv.json","tenant":"6195d0cc-4563-49ba-bf64-ea454db5d2b6","module":"config","tag":""}, retryTimes=0, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371
+2022-11-27T16:03:43.076+0800	ERROR	rpc/rpc_client.go:517	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"dev","dataId":"goods-srv.json","tenant":"6195d0cc-4563-49ba-bf64-ea454db5d2b6","module":"config","tag":""}, retryTimes=1, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371
+2022-11-27T16:03:43.178+0800	ERROR	rpc/rpc_client.go:517	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"dev","dataId":"goods-srv.json","tenant":"6195d0cc-4563-49ba-bf64-ea454db5d2b6","module":"config","tag":""}, retryTimes=2, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371
+2022-11-27T16:03:43.280+0800	INFO	config_client/config_client.go:202	get config from server error:client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371 
+2022-11-27T16:03:46.991+0800	WARN	rpc/rpc_client.go:349	config-0-c3cdc3f9-a37e-4560-911e-7840e78fbddf fail to connect server, after trying 1 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T16:03:49.100+0800	WARN	rpc/rpc_client.go:349	config-0-c3cdc3f9-a37e-4560-911e-7840e78fbddf fail to connect server, after trying 2 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T16:03:51.307+0800	WARN	rpc/rpc_client.go:349	config-0-c3cdc3f9-a37e-4560-911e-7840e78fbddf fail to connect server, after trying 3 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T16:03:53.619+0800	WARN	rpc/rpc_client.go:349	config-0-c3cdc3f9-a37e-4560-911e-7840e78fbddf fail to connect server, after trying 4 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T16:03:56.025+0800	WARN	rpc/rpc_client.go:349	config-0-c3cdc3f9-a37e-4560-911e-7840e78fbddf fail to connect server, after trying 5 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2022-11-27T16:03:58.538+0800	WARN	rpc/rpc_client.go:349	config-0-c3cdc3f9-a37e-4560-911e-7840e78fbddf fail to connect server, after trying 6 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.0.109:9848: connectex: No connection could be made because the target machine actively refused it."
+2023-01-10T10:50:48.701+0800	DEBUG	rpc/rpc_client.go:286	config-0-21c5eef4-c48a-4941-a5bf-38f0c7bd707f register server push request:ConfigChangeNotifyRequest handler:ConfigChangeNotifyRequestHandler
+2023-01-10T10:50:48.702+0800	DEBUG	rpc/rpc_client.go:286	config-0-21c5eef4-c48a-4941-a5bf-38f0c7bd707f register server push request:ConnectResetRequest handler:ConnectResetRequestHandler
+2023-01-10T10:50:48.702+0800	DEBUG	rpc/rpc_client.go:286	config-0-21c5eef4-c48a-4941-a5bf-38f0c7bd707f register server push request:ClientDetectionRequest handler:ClientDetectionRequestHandler
+2023-01-10T10:50:48.718+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-21c5eef4-c48a-4941-a5bf-38f0c7bd707f try to connect to server on start up, server: {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}
+2023-01-10T10:50:48.751+0800	INFO	util/common.go:96	Local IP:192.168.1.7
+2023-01-10T10:50:51.724+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-21c5eef4-c48a-4941-a5bf-38f0c7bd707f fail to connect to server on start up, error message=rpc error: code = DeadlineExceeded desc = context deadline exceeded, start up retry times left=2
+2023-01-10T10:50:51.724+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-21c5eef4-c48a-4941-a5bf-38f0c7bd707f try to connect to server on start up, server: {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}
+2023-01-10T10:50:54.733+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-21c5eef4-c48a-4941-a5bf-38f0c7bd707f fail to connect to server on start up, error message=rpc error: code = DeadlineExceeded desc = context deadline exceeded, start up retry times left=1
+2023-01-10T10:50:54.733+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-21c5eef4-c48a-4941-a5bf-38f0c7bd707f try to connect to server on start up, server: {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}
+2023-01-10T10:50:57.738+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-21c5eef4-c48a-4941-a5bf-38f0c7bd707f fail to connect to server on start up, error message=rpc error: code = DeadlineExceeded desc = context deadline exceeded, start up retry times left=0
+2023-01-10T10:50:57.740+0800	ERROR	rpc/rpc_client.go:517	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"dev","dataId":"goods-srv.json","tenant":"6195d0cc-4563-49ba-bf64-ea454db5d2b6","module":"config","tag":""}, retryTimes=0, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371
+2023-01-10T10:50:57.739+0800	INFO	rpc/rpc_client.go:318	config-0-21c5eef4-c48a-4941-a5bf-38f0c7bd707f try to re connect to a new server, server is not appointed, will choose a random server.
+2023-01-10T10:50:57.846+0800	ERROR	rpc/rpc_client.go:517	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"dev","dataId":"goods-srv.json","tenant":"6195d0cc-4563-49ba-bf64-ea454db5d2b6","module":"config","tag":""}, retryTimes=1, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371
+2023-01-10T10:50:57.954+0800	ERROR	rpc/rpc_client.go:517	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"dev","dataId":"goods-srv.json","tenant":"6195d0cc-4563-49ba-bf64-ea454db5d2b6","module":"config","tag":""}, retryTimes=2, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371
+2023-01-10T10:50:58.064+0800	INFO	config_client/config_client.go:202	get config from server error:client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/common/remote/rpc/rpc_client.go:482
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:199
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/Program Files (x86)/GO/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.1.2/clients/config_client/config_client.go:141
+go_project/fish_farm/fish_srv/goods_srv/initialize.InitConfig
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/initialize/config.go:72
+main.main
+	D:/Program Files (x86)/GO/src/go_project/fish_farm/fish_srv/goods_srv/main.go:34
+runtime.main
+	E:/Program Files/g/go/src/runtime/proc.go:225
+runtime.goexit
+	E:/Program Files/g/go/src/runtime/asm_amd64.s:1371 
+2023-01-10T10:51:03.745+0800	WARN	rpc/rpc_client.go:349	config-0-21c5eef4-c48a-4941-a5bf-38f0c7bd707f fail to connect server, after trying 1 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = DeadlineExceeded desc = context deadline exceeded
+2023-01-10T10:51:06.866+0800	WARN	rpc/rpc_client.go:349	config-0-21c5eef4-c48a-4941-a5bf-38f0c7bd707f fail to connect server, after trying 2 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = DeadlineExceeded desc = context deadline exceeded
+2023-01-10T10:51:10.082+0800	WARN	rpc/rpc_client.go:349	config-0-21c5eef4-c48a-4941-a5bf-38f0c7bd707f fail to connect server, after trying 3 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = DeadlineExceeded desc = context deadline exceeded
+2023-01-10T10:51:13.402+0800	WARN	rpc/rpc_client.go:349	config-0-21c5eef4-c48a-4941-a5bf-38f0c7bd707f fail to connect server, after trying 4 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = DeadlineExceeded desc = context deadline exceeded
+2023-01-10T10:51:16.827+0800	WARN	rpc/rpc_client.go:349	config-0-21c5eef4-c48a-4941-a5bf-38f0c7bd707f fail to connect server, after trying 5 times, last try server is {serverIp:192.168.0.109 serverPort:8848 serverGrpcPort:0}, error=rpc error: code = DeadlineExceeded desc = context deadline exceeded
