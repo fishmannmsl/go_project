@@ -9,6 +9,9 @@ import (
 	"go.uber.org/zap"
 	"go_project/fish_farm/fish-api/user-web/global"
 	"go_project/fish_farm/fish-api/user-web/utils"
+	"os"
+	"os/signal"
+	"syscall"
 
 	"go_project/fish_farm/fish-api/user-web/initialize"
 	myvalidator "go_project/fish_farm/fish-api/user-web/validator"

@@ -3,25 +3,23 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/hashicorp/consul/api"
+	"github.com/satori/go.uuid"
+	"go.uber.org/zap"
+	"go_project/fish_farm/user_srv/global"
+	"go_project/fish_farm/user_srv/handler"
+	"go_project/fish_farm/user_srv/initialize"
+	"go_project/fish_farm/user_srv/proto"
+	"go_project/fish_farm/user_srv/utils"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/health"
+	"google.golang.org/grpc/health/grpc_health_v1"
+	"google.golang.org/grpc/keepalive"
 	"net"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
-
-	"github.com/hashicorp/consul/api"
-	uuid "github.com/satori/go.uuid"
-	"go.uber.org/zap"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/health"
-	"google.golang.org/grpc/health/grpc_health_v1"
-	"google.golang.org/grpc/keepalive"
-
-	"go_project/fish_farm/fish_srv/user_srv/global"
-	"go_project/fish_farm/fish_srv/user_srv/handler"
-	"go_project/fish_farm/fish_srv/user_srv/initialize"
-	"go_project/fish_farm/fish_srv/user_srv/proto"
-	"go_project/fish_farm/fish_srv/user_srv/utils"
 )
 
 func main() {
@@ -63,9 +61,9 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	//生成对应的检查对象:IP地址为当前主机IP
+	//生成对应的检查对象
 	check := &api.AgentServiceCheck{
-		GRPC:                           fmt.Sprintf("%s:%d", global.ServerConfig.Host, *Port),
+		GRPC:                           fmt.Sprintf("%s:%d", "192.168.0.101", *Port),
 		Timeout:                        "5s",
 		Interval:                       "5s",
 		DeregisterCriticalServiceAfter: "10s",
@@ -78,7 +76,7 @@ func main() {
 		ID:      serviceID,
 		Port:    *Port,
 		Tags:    []string{"srv", "user"},
-		Address: global.ServerConfig.Host,
+		Address: "192.168.0.101",
 		Check:   check,
 	}
 
