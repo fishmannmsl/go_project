@@ -3,14 +3,16 @@ package initialize
 import (
 	"encoding/json"
 	"fmt"
+	"go.uber.org/zap"
+	"time"
+
 	"github.com/fsnotify/fsnotify"
 	"github.com/nacos-group/nacos-sdk-go/v2/clients"
 	"github.com/nacos-group/nacos-sdk-go/v2/common/constant"
 	"github.com/nacos-group/nacos-sdk-go/v2/vo"
 	"github.com/spf13/viper"
-	"go.uber.org/zap"
+
 	"go_project/fish_farm/fish-api/user-web/global"
-	"time"
 )
 
 /*

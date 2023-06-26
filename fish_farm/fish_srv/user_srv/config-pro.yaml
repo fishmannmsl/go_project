@@ -1,12 +1,12 @@
-name: 'user_srv'
-host: '192.168.0.108'
-mysql:
-  host: '192.168.0.101'
-  port: 3306
-  db: 'fish_user_srv'
-  user: 'root'
-  password: '123456'
-
-consul:
-  host: '192.168.0.101'
-  port: 8500
+#name: 'user_srv'
+#host: '192.168.0.108'
+#mysql:
+#  host: '192.168.0.101'
+#  port: 3306
+#  db: 'fish_user_srv'
+#  user: 'root'
+#  password: '123456'
+#
+#consul:
+#  host: '192.168.0.101'
+#  port: 8500

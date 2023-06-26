@@ -2,18 +2,19 @@ package main
 
 import (
 	"fmt"
-	"github.com/gin-gonic/gin/binding"
-	ut "github.com/go-playground/universal-translator"
-	"github.com/go-playground/validator/v10"
-	"github.com/spf13/viper"
 	"go.uber.org/zap"
-	"go_project/fish_farm/fish-api/user-web/global"
-	"go_project/fish_farm/fish-api/user-web/utils"
 	"os"
 	"os/signal"
 	"syscall"
 
+	"github.com/gin-gonic/gin/binding"
+	ut "github.com/go-playground/universal-translator"
+	"github.com/go-playground/validator/v10"
+	"github.com/spf13/viper"
+
+	"go_project/fish_farm/fish-api/user-web/global"
 	"go_project/fish_farm/fish-api/user-web/initialize"
+	"go_project/fish_farm/fish-api/user-web/utils"
 	myvalidator "go_project/fish_farm/fish-api/user-web/validator"
 )
 

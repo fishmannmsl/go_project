@@ -3,23 +3,25 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/hashicorp/consul/api"
-	"github.com/satori/go.uuid"
-	"go.uber.org/zap"
-	"go_project/fish_farm/user_srv/global"
-	"go_project/fish_farm/user_srv/handler"
-	"go_project/fish_farm/user_srv/initialize"
-	"go_project/fish_farm/user_srv/proto"
-	"go_project/fish_farm/user_srv/utils"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/health"
-	"google.golang.org/grpc/health/grpc_health_v1"
-	"google.golang.org/grpc/keepalive"
 	"net"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
+
+	"github.com/hashicorp/consul/api"
+	"github.com/satori/go.uuid"
+	"go.uber.org/zap"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/health"
+	"google.golang.org/grpc/health/grpc_health_v1"
+	"google.golang.org/grpc/keepalive"
+	
+	"go_project/fish_farm/fish_srv/user_srv/global"
+	"go_project/fish_farm/fish_srv/user_srv/handler"
+	"go_project/fish_farm/fish_srv/user_srv/initialize"
+	"go_project/fish_farm/fish_srv/user_srv/proto"
+	"go_project/fish_farm/fish_srv/user_srv/utils"
 )
 
 func main() {

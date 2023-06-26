@@ -9,6 +9,7 @@ import (
 	"github.com/nacos-group/nacos-sdk-go/v2/vo"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
+
 	"go_project/fish_farm/fish_srv/user_srv/global"
 )
 
