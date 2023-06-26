@@ -1,2 +1,0 @@
-2022-10-19T10:49:41.153+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<tmp/config/log>   cacheDir:<tmp/config/cache>
-2022-10-19T10:55:03.625+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<tmp/config/log>   cacheDir:<tmp/config/cache>
