@@ -6,10 +6,9 @@ import (
 	"net/http"
 )
 
-/*
-验证用户是否为管理员
-*/
 func IsAdminAuth() gin.HandlerFunc {
+	//将一些共用的代码抽出来然后共用 - 版本管理
+	//如果不抽出来
 	return func(ctx *gin.Context) {
 		claims, _ := ctx.Get("claims")
 		currentUser := claims.(*models.CustomClaims)
@@ -21,7 +20,7 @@ func IsAdminAuth() gin.HandlerFunc {
 			ctx.Abort()
 			return
 		}
-
 		ctx.Next()
 	}
+
 }

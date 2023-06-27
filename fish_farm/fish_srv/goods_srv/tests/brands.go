@@ -3,28 +3,41 @@ package main
 import (
 	"context"
 	"fmt"
-	"go_project/fish_farm/fish_srv/goods_srv/proto"
+
 	"google.golang.org/grpc"
+
+	"mxshop_srvs/goods_srv/proto"
 )
 
-/*
-测试功能接口文件
-*/
-var (
-	BrandClient proto.GoodsClient
-	conn        *grpc.ClientConn
-)
+var brandClient proto.GoodsClient
+var conn *grpc.ClientConn
 
-/*
-查询用户方法测试
-*/
-func TestGetBrandList() {
-	rsp, err := BrandClient.BrandList(context.Background(), &proto.BrandFilterRequest{})
-	fmt.Println(rsp)
+
+func TestGetBrandList(){
+	rsp, err := brandClient.BrandList(context.Background(), &proto.BrandFilterRequest{
+	})
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println(rsp.Total)
 	for _, brand := range rsp.Data {
 		fmt.Println(brand.Name)
 	}
+}
+
+
+func Init(){
+	var err error
+	conn, err = grpc.Dial("127.0.0.1:50051", grpc.WithInsecure())
+	if err != nil {
+		panic(err)
+	}
+	brandClient = proto.NewGoodsClient(conn)
+}
+
+func main() {
+	Init()
+	TestGetBrandList()
+
+	conn.Close()
 }

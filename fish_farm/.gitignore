@@ -6,3 +6,5 @@
 *.log
 #忽略生成的缓存
 **/cache/config/
+#忽略测试文件
+**/tests

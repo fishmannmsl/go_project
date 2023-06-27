@@ -6,14 +6,12 @@ import (
 	"go_project/fish_farm/fish-api/goods-web/proto"
 )
 
-/*
-放置全局变量
-*/
 var (
-	ServerConfig *config.ServerConfig = &config.ServerConfig{}
-	NacosConfig  *config.NacosConfig  = &config.NacosConfig{}
-
 	Trans ut.Translator
 
-	UserSrvClient proto.UserClient
+	ServerConfig *config.ServerConfig = &config.ServerConfig{}
+
+	NacosConfig *config.NacosConfig = &config.NacosConfig{}
+
+	GoodsSrvClient proto.GoodsClient
 )

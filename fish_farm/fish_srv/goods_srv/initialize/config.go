@@ -4,64 +4,60 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/nacos-group/nacos-sdk-go/v2/clients"
-	"github.com/nacos-group/nacos-sdk-go/v2/common/constant"
-	"github.com/nacos-group/nacos-sdk-go/v2/vo"
+	"github.com/nacos-group/nacos-sdk-go/clients"
+	"github.com/nacos-group/nacos-sdk-go/common/constant"
+	"github.com/nacos-group/nacos-sdk-go/vo"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
-	"go_project/fish_farm/fish_srv/goods_srv/global"
-)
 
-/*
-读取本地配置文件
-*/
-func GetEnvInfo(env string) int {
+	"mxshop_srvs/goods_srv/global"
+)
+func GetEnvInfo(env string) bool {
 	viper.AutomaticEnv()
-	return viper.GetInt(env)
+	return viper.GetBool(env)
+	//刚才设置的环境变量 想要生效 我们必须得重启goland
 }
 
-//从配置文件中读取对应配置
-func InitConfig() {
-	var configPath string
-	//读取本地环境变量值,设置环境变量后有要重启goland
-	debug := GetEnvInfo("ACSvcPort")
-	configFilePrefix := "goods_srv/config"
-	//文件的路径,配置为相对路径
-	if debug == 17532 {
-		configPath = fmt.Sprintf("%s-debug.yaml", configFilePrefix)
-	} else {
-		configPath = fmt.Sprintf("%s-pro.yaml", configFilePrefix)
+func InitConfig(){
+	//从配置文件中读取出对应的配置
+	debug := GetEnvInfo("MXSHOP_DEBUG")
+	configFilePrefix := "config"
+	configFileName := fmt.Sprintf("goods_srv/%s-pro.yaml", configFilePrefix)
+	if debug {
+		configFileName = fmt.Sprintf("goods_srv/%s-debug.yaml", configFilePrefix)
 	}
 
 	v := viper.New()
-	v.SetConfigFile(configPath)
+	//文件的路径如何设置
+	v.SetConfigFile(configFileName)
 	if err := v.ReadInConfig(); err != nil {
 		panic(err)
 	}
+	//这个对象如何在其他文件中使用 - 全局变量
 	if err := v.Unmarshal(&global.NacosConfig); err != nil {
 		panic(err)
 	}
 	zap.S().Infof("配置信息: %v", global.NacosConfig)
 
-	//实例化服务端结构体
+	//从nacos中读取配置信息
 	sc := []constant.ServerConfig{
 		{
 			IpAddr: global.NacosConfig.Host,
-			Port:   global.NacosConfig.Port,
+			Port: global.NacosConfig.Port,
 		},
 	}
-	//实例化监听配置信息
-	cc := constant.ClientConfig{
-		NamespaceId:         global.NacosConfig.Namespace,
+
+	cc := constant.ClientConfig {
+		NamespaceId:         global.NacosConfig.Namespace, // 如果需要支持多namespace，我们可以场景多个client,它们有不同的NamespaceId
 		TimeoutMs:           5000,
-		NotLoadCacheAtStart: true, // 在启动的时候不读取缓存在CacheDir的service信息
-		LogDir:              "tmp/naocs/log",
-		CacheDir:            "tmp/config/cache",
-		LogRollingConfig: &constant.ClientLogRollingConfig{
-			MaxAge: 3,
-		},
-		LogLevel: "debug",
+		NotLoadCacheAtStart: true,
+		LogDir:              "tmp/nacos/log",
+		CacheDir:            "tmp/nacos/cache",
+		RotateTime:          "1h",
+		MaxAge:              3,
+		LogLevel:            "debug",
 	}
+
 	configClient, err := clients.CreateConfigClient(map[string]interface{}{
 		"serverConfigs": sc,
 		"clientConfig":  cc,
@@ -69,16 +65,19 @@ func InitConfig() {
 	if err != nil {
 		panic(err)
 	}
+
 	content, err := configClient.GetConfig(vo.ConfigParam{
 		DataId: global.NacosConfig.DataId,
 		Group:  global.NacosConfig.Group})
+
 	if err != nil {
 		panic(err)
 	}
-	//将json字符串转化成struct，需要设置struct的tag
+	//fmt.Println(content) //字符串 - yaml
+	//想要将一个json字符串转换成struct，需要去设置这个struct的tag
 	err = json.Unmarshal([]byte(content), &global.ServerConfig)
-	if err != nil {
-		zap.S().Fatalf("读取nacos配置失败：%s", err.Error())
+	if err != nil{
+		zap.S().Fatalf("读取nacos配置失败： %s", err.Error())
 	}
-	fmt.Println(global.ServerConfig)
+	fmt.Println(&global.ServerConfig)
 }
